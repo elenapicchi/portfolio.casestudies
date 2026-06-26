@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nomysh Case Study — Elena Picchi</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #1B3A5C; --navy-deep: #112540; --green: #2E7D5E;
+      --green-light: #3D9E78; --cream: #F7F5F0; --warm-white: #FAFAF8;
+      --ink: #1A1A1A; --mid: #555555; --light: #888888;
+      --border: #E2DDD6; --accent-yellow: #E8B84B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--warm-white); color: var(--ink); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy-deep);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 48px; height: 60px;
+    }
+    .nav-name { font-family: 'DM Serif Display', serif; color: white; font-size: 18px; }
+    .nav-back { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; }
+    .nav-back:hover { color: white; }
+    .case-hero { background: var(--navy-deep); padding: 140px 48px 80px; }
+    .case-type { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-yellow); margin-bottom: 16px; }
+    .case-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 60px); color: white; line-height: 1.1; max-width: 760px; margin-bottom: 24px; }
+    .case-hero p { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.7; font-weight: 300; }
+    .case-stats {
+      background: var(--navy); padding: 40px 48px;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+    }
+    .cs { padding: 0 32px; border-right: 1px solid rgba(255,255,255,0.1); }
+    .cs:first-child { padding-left: 0; }
+    .cs:last-child { border-right: none; }
+    .cs-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent-yellow); }
+    .cs-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; line-height: 1.4; }
+    .case-body { max-width: 800px; margin: 0 auto; padding: 80px 48px; }
+    .case-body h2 { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--navy); margin: 48px 0 16px; }
+    .case-body h2:first-child { margin-top: 0; }
+    .case-body p { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 16px; }
+    .case-body p strong { color: var(--ink); font-weight: 600; }
+    .case-body ul { margin: 0 0 20px 20px; }
+    .case-body li { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 8px; }
+    .case-body li strong { color: var(--ink); }
+    .highlight-box { background: var(--cream); border-left: 4px solid var(--accent-yellow); padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+    .highlight-box p { margin: 0; font-size: 17px; font-style: italic; color: var(--navy); line-height: 1.65; }
+    .writing-links { margin: 24px 0; display: flex; flex-direction: column; gap: 0; }
+    .wl { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--navy); font-size: 15px; font-weight: 500; transition: color 0.15s; }
+    .wl:first-child { border-top: 1px solid var(--border); }
+    .wl:hover { color: var(--green); }
+    .wl span { color: var(--green); font-size: 18px; }
+    .back-link { display: inline-block; margin-top: 48px; color: var(--green); text-decoration: none; font-weight: 500; font-size: 15px; }
+    .back-link:hover { text-decoration: underline; }
+    footer { background: var(--navy-deep); padding: 24px 48px; display: flex; justify-content: space-between; }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+    @media (max-width: 768px) {
+      nav, .case-hero, .case-body, footer { padding-left: 24px; padding-right: 24px; }
+      .case-stats { grid-template-columns: repeat(2,1fr); gap: 28px; padding: 36px 24px; }
+      .cs { border-right: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <span class="nav-name">Elena Picchi</span>
+  <a href="index.html" class="nav-back">← Back to portfolio</a>
+</nav>
+
+<div class="case-hero">
+  <p class="case-type">B2B Growth · Thought Leadership · Marketing Function Build</p>
+  <h1>500% platform growth: building Nomysh's marketing function from zero</h1>
+  <p>No brand, no audience, no playbook. In 12 months: a full marketing function, 500% platform growth, the first B2B enterprise clients, and 100%+ MoM growth every single month.</p>
+</div>
+
+<div class="case-stats">
+  <div class="cs"><div class="cs-num">500%</div><div class="cs-label">Platform growth in 6 months</div></div>
+  <div class="cs"><div class="cs-num">100%+</div><div class="cs-label">MoM growth for 12 consecutive months</div></div>
+  <div class="cs"><div class="cs-num">12 mo</div><div class="cs-label">Consecutive months of 100%+ MoM growth</div></div>
+  <div class="cs"><div class="cs-num">Full</div><div class="cs-label">Marketing function built from scratch: brand, CRM, content, paid, B2B</div></div>
+</div>
+
+<div class="case-body">
+
+  <h2>The context</h2>
+  <p>Nomysh was a creator economy platform — helping content creators monetise through affiliate marketing, brand partnerships and UGC. When I joined in October 2022, there was no marketing infrastructure, no established brand voice, and no content strategy.</p>
+  <p>The audience was B2B in nature: creators who thought of themselves as micro-businesses, and brands looking to partner with them. The content had to work for both sides — educational enough to build creator trust, sophisticated enough to convert brand partners.</p>
+
+  <h2>What I built</h2>
+  <p><strong>Brand and messaging from scratch.</strong> I developed Nomysh's brand identity, tone of voice and core messaging architecture through customer research and persona development — building a positioning that differentiated the platform in a crowded creator tools market.</p>
+
+  <p><strong>Thought leadership content programme.</strong> I wrote and produced a library of long-form blog articles, webinars and video content covering the economics of content creation, brand pitching, affiliate marketing strategy and creator business models. I hosted webinars and appeared on camera in educational video content — producing material that established Nomysh as a credible voice in the creator economy space.</p>
+
+  <div class="highlight-box">
+    <p>Writing about the economics of content creation for an audience of self-employed creators required exactly the same skill as writing about investment for founders — making financial concepts feel relevant, actionable and trustworthy.</p>
+  </div>
+
+  <p><strong>B2B enterprise programme.</strong> I identified and secured Nomysh's first B2B enterprise clients, developing partnership propositions and sales materials that framed the platform's value for brand partners — not just creators.</p>
+
+  <p><strong>CRM and lifecycle marketing.</strong> I built and managed the full CRM infrastructure — segmentation, automation, lifecycle flows — to convert acquired users into active platform participants and retain them over time.</p>
+
+  <h2>Published thought leadership from Nomysh</h2>
+  <p>A selection of articles and guides written during this period:</p>
+  <div class="writing-links">
+    <a href="https://www.nomysh.com/blog/206/Maximizing-the-Value-of-Your-Content%3A-A-Guide-for-Creators" target="_blank" class="wl">Maximising the value of your content: a guide for creators <span>↗</span></a>
+    <a href="https://www.nomysh.com/blog/187/The-Economics-of-UGC-Creation---What%E2%80%99s-Your-Plan-B" target="_blank" class="wl">The economics of UGC creation: what's your plan B? <span>↗</span></a>
+    <a href="https://www.nomysh.com/blog/169/How-to-Successfully-Pitch-to-Brands-in-2023" target="_blank" class="wl">How to successfully pitch to brands in 2023 (also delivered as a live webinar) <span>↗</span></a>
+    <a href="https://www.nomysh.com/blog/193/How-to-start-Affiliate-Marketing-for-Beginners%3A-Make-%244K-%2F-month-(Step-By-Step-Guide-2023)" target="_blank" class="wl">How to start affiliate marketing for beginners: make $4K/month <span>↗</span></a>
+    <a href="https://www.nomysh.com/blog/165/Maximize-Your-Content-Creation-Earnings-in-7-Steps" target="_blank" class="wl">Maximise your content creation earnings in 7 steps <span>↗</span></a>
+  </div>
+
+  <h2>The result</h2>
+  <p>500% platform growth in the first six months. 100%+ month-on-month growth sustained for 12 consecutive months. First B2B enterprise clients secured. A fully functioning marketing operation built where there was none.</p>
+
+  <a href="index.html" class="back-link">← Back to all work</a>
+</div>
+
+<footer>
+  <p>© 2026 Elena Picchi</p>
+  <p>elena.sophia.picchi@gmail.com</p>
+</footer>
+</body>
+</html>
