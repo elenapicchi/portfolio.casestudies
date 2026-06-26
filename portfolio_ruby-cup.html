@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ruby Cup B2B Case Study — Elena Picchi</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #1B3A5C; --navy-deep: #112540; --green: #2E7D5E;
+      --green-light: #3D9E78; --cream: #F7F5F0; --warm-white: #FAFAF8;
+      --ink: #1A1A1A; --mid: #555555; --light: #888888;
+      --border: #E2DDD6; --accent-yellow: #E8B84B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--warm-white); color: var(--ink); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy-deep);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 48px; height: 60px;
+    }
+    .nav-name { font-family: 'DM Serif Display', serif; color: white; font-size: 18px; }
+    .nav-back { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+    .nav-back:hover { color: white; }
+
+    .case-hero {
+      background: var(--navy); padding: 140px 48px 80px;
+    }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--green-light); text-decoration: none; }
+    .case-type { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; }
+    .case-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 60px); color: white; line-height: 1.1; max-width: 760px; margin-bottom: 24px; }
+    .case-hero p { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.7; font-weight: 300; }
+
+    .case-stats {
+      background: var(--navy-deep); padding: 40px 48px;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+    }
+    .cs { padding: 0 32px; border-right: 1px solid rgba(255,255,255,0.1); }
+    .cs:first-child { padding-left: 0; }
+    .cs:last-child { border-right: none; }
+    .cs-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent-yellow); }
+    .cs-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; line-height: 1.4; }
+
+    .case-body { max-width: 800px; margin: 0 auto; padding: 80px 48px; }
+    .case-body h2 { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--navy); margin: 48px 0 16px; }
+    .case-body h2:first-child { margin-top: 0; }
+    .case-body p { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 16px; }
+    .case-body p strong { color: var(--ink); font-weight: 600; }
+    .case-body ul { margin: 0 0 20px 20px; }
+    .case-body li { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 8px; }
+    .case-body li strong { color: var(--ink); }
+
+    .highlight-box {
+      background: var(--cream); border-left: 4px solid var(--green);
+      padding: 24px 28px; border-radius: 0 8px 8px 0;
+      margin: 32px 0;
+    }
+    .highlight-box p { margin: 0; font-size: 17px; font-style: italic; color: var(--navy); line-height: 1.65; }
+
+    .back-link { display: inline-block; margin-top: 48px; color: var(--green); text-decoration: none; font-weight: 500; font-size: 15px; }
+    .back-link:hover { text-decoration: underline; }
+
+    .writing-links { margin: 24px 0; display: flex; flex-direction: column; gap: 0; }
+    .wl { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--navy); font-size: 15px; font-weight: 500; transition: color 0.15s; }
+    .wl:first-child { border-top: 1px solid var(--border); }
+    .wl:hover { color: var(--green); }
+    .wl-meta { font-size: 12px; color: var(--light); font-weight: 400; margin-top: 3px; }
+    .wl-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .wl span { color: var(--green); font-size: 18px; }
+
+    footer { background: var(--navy-deep); padding: 24px 48px; display: flex; justify-content: space-between; }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 768px) {
+      nav, .case-hero, .case-body, footer { padding-left: 24px; padding-right: 24px; }
+      .case-stats { grid-template-columns: repeat(2,1fr); gap: 28px; padding: 36px 24px; }
+      .cs { border-right: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Elena Picchi</span>
+  <a href="index.html" class="nav-back">← Back to portfolio</a>
+</nav>
+
+<div class="case-hero">
+  <p class="breadcrumb"><a href="index.html">Portfolio</a> / Case Study</p>
+  <p class="case-type">B2B Programme · Website Redevelopment · PR & Agency Management</p>
+  <h1>Building Ruby Cup's B2B marketing engine and a website that converts</h1>
+  <p>From zero B2B infrastructure to a functioning enterprise programme, national press coverage, and a website overhaul that drove 92% more conversions.</p>
+</div>
+
+<div class="case-stats">
+  <div class="cs"><div class="cs-num">+92%</div><div class="cs-label">Conversion rate improvement post website redevelopment</div></div>
+  <div class="cs"><div class="cs-num">10</div><div class="cs-label">Collaborators managed across the website project (UX, design, copy, dev, ads)</div></div>
+  <div class="cs"><div class="cs-num">3</div><div class="cs-label">Agency relationships managed simultaneously (web, PR, OOH)</div></div>
+  <div class="cs"><div class="cs-num">From zero</div><div class="cs-label">B2B enterprise programme built from scratch, securing first corporate clients</div></div>
+</div>
+
+<div class="case-body">
+
+  <h2>The situation</h2>
+  <p>When I joined Ruby Cup as Marketing Manager in October 2023, the B2B side of the business was effectively non-existent. There were no enterprise sales materials, no B2B content strategy, and no external agency relationships managing the digital infrastructure. The website was underperforming, and there was no coordinated PR or out-of-home presence.</p>
+  <p>At the same time, Ruby Cup — a social enterprise operating on a buy-one-give-one model — had a genuinely compelling story for corporate partners. The challenge was building the machinery to tell it.</p>
+
+  <h2>What I built</h2>
+  <p><strong>B2B marketing programme:</strong> I created the full B2B infrastructure from scratch — pitch decks, partnership sales collateral, case study content and a B2B landing page — positioning Ruby Cup as a credible corporate partner for workplace wellbeing, CSR and sustainability programmes. This directly secured the brand's first enterprise clients.</p>
+
+  <p><strong>Website redevelopment:</strong> I led an end-to-end website overhaul, briefing and managing a cross-functional team of 10 collaborators including a copywriter, UX/UI expert, designer, ads specialists and the external web development agency. I wrote the briefs, managed timelines, reviewed deliverables, and ensured the new site reflected both the brand's values and its commercial goals.</p>
+
+  <div class="highlight-box">
+    <p>"Managing a 10-person cross-functional team across a full website redevelopment — while simultaneously running the day-to-day marketing programme — required the same skills as agency management at a small marketing firm."</p>
+  </div>
+
+  <p>The result was a +92% improvement in conversion rate, achieved through a combination of cleaner user journeys, stronger on-page copy, and strategic A/B testing of landing page elements.</p>
+
+  <p><strong>PR and media coverage:</strong> I managed relationships with multiple PR agencies, writing briefs and press releases that resulted in coverage in Cosmopolitan and other national media. I also liaised with Global for the brand's OOH advertising campaign, overseeing creative direction and copy.</p>
+
+  <p><strong>CSR and impact reporting:</strong> As part of the B2B programme, I worked on Ruby Cup's CSR output — presenting investment proposals for social enterprise and charity partnerships to internal stakeholders, managing impact budgets, and producing content that communicated social return on investment to corporate audiences.</p>
+
+  <h2>Skills demonstrated</h2>
+  <ul>
+    <li><strong>Agency management:</strong> Briefing, managing and evaluating multiple external partners simultaneously</li>
+    <li><strong>B2B copywriting:</strong> Pitch decks, sales collateral, partnership content for a corporate audience</li>
+    <li><strong>Project management:</strong> Coordinating a 10-person team across a major digital delivery</li>
+    <li><strong>PR writing:</strong> Press releases, media briefs, coverage strategy</li>
+    <li><strong>Impact communication:</strong> Translating CSR data and social outcomes into compelling stakeholder content</li>
+    <li><strong>Conversion optimisation:</strong> Funnel analysis, landing page redesign, A/B testing</li>
+  </ul>
+
+  <h2>Published blog content</h2>
+  <p>A selection of articles written for Ruby Cup, covering policy analysis, sustainability, health education and campaign content.</p>
+  <div class="writing-links">
+    <a href="https://rubycup.com/blogs/news/period-pants-are-cheaper-in-2024-after-vat-tax-got-axed" target="_blank" class="wl">
+      <div><div>Period pants are cheaper in 2024 after VAT tax got axed</div><div class="wl-meta">Policy analysis · translating government tax change into consumer action</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/tampon-tax-italy-to-raise-vat-on-sanitary-and-baby-products" target="_blank" class="wl">
+      <div><div>Tampon tax: Italy to raise VAT on sanitary products</div><div class="wl-meta">Policy analysis · economic and social impact for a mass audience</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/taking-action" target="_blank" class="wl">
+      <div><div>Taking action: Ruby Cup's CSR and social impact report</div><div class="wl-meta">Impact report · communicating investment in social enterprise and charity partnerships</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/festival-season-your-guide-to-leaving-a-small-footprint" target="_blank" class="wl">
+      <div><div>Festival season: your guide to leaving a small footprint</div><div class="wl-meta">Sustainability content · impact data made relatable</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/international-womens-day-2024-this-year-s-theme-what-it-is-and-how-to-celebrate-it" target="_blank" class="wl">
+      <div><div>International Women's Day 2024: this year's theme and how to celebrate it</div><div class="wl-meta">Campaign content · thought leadership tied to brand moment</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/runna-x-ruby-cup-the-marathon-checklist" target="_blank" class="wl">
+      <div><div>Runna x Ruby Cup: the marathon checklist</div><div class="wl-meta">Partnership content · B2B collaboration storytelling</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://rubycup.com/blogs/news/a-complete-guide-to-manage-and-treat-incontinence-in-senior-citizens" target="_blank" class="wl">
+      <div><div>A complete guide to managing incontinence in senior citizens</div><div class="wl-meta">Educational long-form · complex health topic made accessible</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+  </div>
+
+  <h2>LinkedIn content</h2>
+  <p>B2B-focused posts written for Ruby Cup's LinkedIn, covering social impact, corporate partnerships and brand moments.</p>
+  <div class="writing-links">
+    <a href="https://www.linkedin.com/posts/some-corporate-partnerships-go-beyond-the-share-7447257304045023233-J0mq/" target="_blank" class="wl">
+      <div><div>Some corporate partnerships go beyond the transaction</div><div class="wl-meta">B2B · corporate partnership storytelling for a professional audience</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/posts/we-are-proud-to-announce-our-partnership-ugcPost-7458090170131759104-at-g/" target="_blank" class="wl">
+      <div><div>Partnership announcement post</div><div class="wl-meta">B2B · enterprise partnership launch content</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/posts/impactatscale-socialenterprise-q4impact-share-7381245071351889921-N1g0/" target="_blank" class="wl">
+      <div><div>Impact at scale: social enterprise Q4 update</div><div class="wl-meta">Impact reporting · translating outcomes for a professional audience</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/posts/socialimpact-periodequity-menstrualhealth-share-7413889038203609088-W-xk/" target="_blank" class="wl">
+      <div><div>Social impact and period equity</div><div class="wl-meta">Thought leadership · mission-driven B2B content</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/posts/menstrualhealth-periodpoverty-socialimpact-share-7453405651411705857-38bo/" target="_blank" class="wl">
+      <div><div>Period poverty and social impact</div><div class="wl-meta">Thought leadership · data-led social narrative</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/posts/periodfriendlyworld-share-7436723832251449344-Eywp/" target="_blank" class="wl">
+      <div><div>Building a period-friendly world</div><div class="wl-meta">Brand values · audience engagement content</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7348304852243898369" target="_blank" class="wl">
+      <div><div>LinkedIn update</div><div class="wl-meta">Brand content · community engagement</div></div>
+      <div class="wl-right"><span>↗</span></div>
+    </a>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to all work</a>
+</div>
+
+<footer>
+  <p>© 2026 Elena Picchi</p>
+  <p>elena.sophia.picchi@gmail.com</p>
+</footer>
+
+</body>
+</html>
