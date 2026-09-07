@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Influencer, Content & CRM — Elena Picchi</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #1B3A5C; --navy-deep: #112540; --green: #2E7D5E; --green-light: #3D9E78;
+    --cream: #F7F5F0; --warm-white: #FAFAF8; --ink: #1A1A1A; --mid: #555555;
+    --light: #888888; --border: #E2DDD6; --accent-yellow: #E8B84B;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--warm-white); color:var(--ink); }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--navy-deep);
+    display:flex; justify-content:space-between; align-items:center; padding:0 48px; height:60px; }
+  .nav-name { font-family:'DM Serif Display',serif; color:white; font-size:18px; }
+  .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:13px; font-weight:500;
+    letter-spacing:0.06em; text-transform:uppercase; margin-left:32px; }
+  .nav-links a:hover { color:white; }
+  .hero { background:var(--navy); padding:140px 48px 80px; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px;
+    background:radial-gradient(circle, rgba(232,184,75,0.2) 0%, transparent 70%); }
+  .back-link { color:var(--green-light); text-decoration:none; font-size:13px; font-weight:600; display:inline-block; margin-bottom:24px; }
+  .card-type { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green-light); margin-bottom:16px; }
+  .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(36px,5vw,56px); color:white; line-height:1.15; max-width:760px; margin-bottom:20px; }
+  .hero-sub { font-size:17px; line-height:1.7; color:rgba(255,255,255,0.72); max-width:600px; font-weight:300; }
+  .stats-bar { background:var(--navy-deep); padding:36px 48px; display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+  .stat { padding:0 24px; border-right:1px solid rgba(255,255,255,0.1); }
+  .stat:first-child { padding-left:0; } .stat:last-child { border-right:none; }
+  .stat-num { font-family:'DM Serif Display',serif; font-size:34px; color:var(--accent-yellow); }
+  .stat-label { font-size:12px; color:rgba(255,255,255,0.55); margin-top:4px; line-height:1.4; }
+  section { padding:80px 48px; max-width:900px; margin:0 auto; }
+  .section-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--green); margin-bottom:14px; }
+  h2 { font-family:'DM Serif Display',serif; font-size:32px; color:var(--navy); margin-bottom:20px; }
+  p.body-text { font-size:16px; line-height:1.8; color:var(--mid); margin-bottom:18px; max-width:680px; }
+  .media-block { background:var(--cream); border:1px dashed var(--border); border-radius:8px;
+    padding:60px 24px; text-align:center; margin:32px 0; color:var(--light); font-size:14px; }
+  .media-block.video-placeholder::before { content:"▶"; font-size:28px; display:block; margin-bottom:8px; }
+  .media-block.image-placeholder::before { content:"🖼"; font-size:28px; display:block; margin-bottom:8px; }
+  .media-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:32px 0; }
+  .media-row .media-block { padding:36px 12px; aspect-ratio:9/16; display:flex; flex-direction:column; justify-content:center; }
+  .approach-list { list-style:none; margin:24px 0; }
+  .approach-list li { padding:14px 0 14px 28px; border-bottom:1px solid var(--border); position:relative; color:var(--mid); font-size:15px; line-height:1.6; }
+  .approach-list li::before { content:"—"; position:absolute; left:0; color:var(--green); }
+  .split { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin:32px 0; align-items:start; }
+  .cta { background:var(--navy); text-align:center; padding:80px 48px; }
+  .cta h2 { color:white; }
+  .cta-link { display:inline-block; margin-top:20px; background:var(--green); color:white; padding:14px 28px;
+    border-radius:4px; text-decoration:none; font-size:14px; font-weight:600; }
+  footer { background:var(--navy-deep); padding:24px 48px; text-align:center; }
+  footer p { font-size:13px; color:rgba(255,255,255,0.35); }
+  @media (max-width:768px){ .hero{padding:120px 24px 60px;} section{padding:60px 24px;} .stats-bar{grid-template-columns:1fr 1fr;padding:24px;gap:16px;} .stat{border-right:none;padding:8px 0;} .media-row{grid-template-columns:1fr 1fr;} .split{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Elena Picchi</span>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <a href="index.html#work" class="back-link">← Back to case studies</a>
+  <p class="card-type">B2C · Influencer, Content & CRM</p>
+  <h1>Micro to macro: an influencer engine that became a third of monthly revenue</h1>
+  <p class="hero-sub">I built Ruby Cup's influencer and content programme from relationship-building through to paid media, and rebuilt the email programme alongside it — two channels that used to generate almost nothing, each independently growing to a third of monthly revenue.</p>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">1/3</div><div class="stat-label">Of monthly revenue from influencer deals</div></div>
+  <div class="stat"><div class="stat-num">1.5%</div><div class="stat-label">Conversion rate on Meta ads using creator content</div></div>
+  <div class="stat"><div class="stat-num">239K</div><div class="stat-label">Views generated in 9 days on TikTok</div></div>
+  <div class="stat"><div class="stat-num">430K</div><div class="stat-label">Monthly organic views on Pinterest</div></div>
+</div>
+
+<section>
+  <p class="section-eyebrow">The brief</p>
+  <h2>Building relationships that actually convert</h2>
+  <p class="body-text">Influencer marketing is easy to do badly — free product for a story that disappears in 24 hours. I wanted a programme that built real, ongoing relationships with creators, and made sure their content had a life beyond the original post: as ads, as owned social content, as a genuine revenue channel.</p>
+
+  <p class="section-eyebrow">Influencer partnerships</p>
+  <ul class="approach-list">
+    <li>Sourced and reached out to creators across the spectrum — from small, highly engaged micro-creators to established names with six-figure followings</li>
+    <li>Built moodboards, negotiated and finalised deals and contracts, managed product sends and follow-up</li>
+    <li>Repurposed creator content as both organic social posts and paid Meta ads, rather than letting it disappear after one use</li>
+    <li>Personally shot and edited content — storyboarding, filming and editing my own TikTok videos, several of which reached hundreds of thousands of views</li>
+  </ul>
+
+  <div class="media-row">
+    <div class="media-block video-placeholder">TikTok clip 1</div>
+    <div class="media-block video-placeholder">TikTok clip 2</div>
+    <div class="media-block video-placeholder">TikTok clip 3</div>
+    <div class="media-block video-placeholder">TikTok clip 4</div>
+  </div>
+  <p class="body-text" style="font-size:13px;color:var(--light);text-align:center;margin-top:-16px;">Replace each placeholder above with an embedded YouTube (unlisted) or Vimeo video of your content — see note below on hosting.</p>
+
+  <p class="section-eyebrow">Email & CRM</p>
+  <p class="body-text">Alongside influencer content, I rebuilt Ruby Cup's newsletters from the ground up — new templates, sharper subject lines, better segmentation. Where previous emails generated close to no direct sales, the rebuilt programme grew to consistently deliver a third of monthly revenue on its own.</p>
+
+  <div class="split">
+    <div class="media-block image-placeholder">Newsletter design — before</div>
+    <div class="media-block image-placeholder">Newsletter design — after</div>
+  </div>
+
+  <p class="section-eyebrow">Result</p>
+  <p class="body-text">Combined, the influencer and CRM programmes went from a negligible contribution to a third of monthly revenue each — built from zero, with no prior playbook to work from.</p>
+</section>
+
+<section class="cta">
+  <h2>Want to see more of the content?</h2>
+  <a href="mailto:elena.sophia.picchi@gmail.com" class="cta-link">Get in touch</a>
+</section>
+
+<footer><p>© 2026 Elena Picchi · London, UK</p></footer>
+
+</body>
+</html>
