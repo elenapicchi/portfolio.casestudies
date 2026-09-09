@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Social Media & Influencer Marketing — Elena Picchi</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #1B3A5C; --navy-deep: #112540; --green: #2E7D5E; --green-light: #3D9E78;
+    --cream: #F7F5F0; --warm-white: #FAFAF8; --ink: #1A1A1A; --mid: #555555;
+    --light: #888888; --border: #E2DDD6; --accent-yellow: #E8B84B;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--warm-white); color:var(--ink); }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--navy-deep);
+    display:flex; justify-content:space-between; align-items:center; padding:0 48px; height:60px; }
+  .nav-name { font-family:'DM Serif Display',serif; color:white; font-size:18px; }
+  .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:13px; font-weight:500;
+    letter-spacing:0.06em; text-transform:uppercase; margin-left:32px; }
+  .nav-links a:hover { color:white; }
+  .hero { background:var(--navy); padding:140px 48px 80px; position:relative; overflow:hidden; max-width:none; margin:0; }
+  .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px;
+    background:radial-gradient(circle, rgba(232,184,75,0.2) 0%, transparent 70%); }
+  .back-link { color:var(--green-light); text-decoration:none; font-size:13px; font-weight:600; display:inline-block; margin-bottom:24px; }
+  .card-type { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green-light); margin-bottom:16px; }
+  .hero h1 { font-family:'DM Serif Display',serif; font-size:clamp(36px,5vw,56px); color:white; line-height:1.15; max-width:820px; margin-bottom:20px; }
+  .hero-sub { font-size:17px; line-height:1.7; color:rgba(255,255,255,0.72); max-width:640px; font-weight:300; }
+  .stats-bar { background:var(--navy-deep); padding:36px 48px; display:grid; grid-template-columns:repeat(3,1fr); gap:0; max-width:none; margin:0; }
+  .stat { padding:0 32px; border-right:1px solid rgba(255,255,255,0.1); }
+  .stat:first-child { padding-left:0; } .stat:last-child { border-right:none; }
+  .stat-num { font-family:'DM Serif Display',serif; font-size:38px; color:var(--accent-yellow); }
+  .stat-label { font-size:13px; color:rgba(255,255,255,0.55); margin-top:4px; }
+  section { padding:80px 48px; max-width:1000px; margin:0 auto; }
+  .section-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--green); margin-bottom:14px; }
+  .section-eyebrow.sub { margin-top:48px; }
+  h2 { font-family:'DM Serif Display',serif; font-size:32px; color:var(--navy); margin-bottom:20px; }
+  h3 { font-family:'DM Serif Display',serif; font-size:22px; color:var(--navy); margin-bottom:10px; }
+  p.body-text { font-size:16px; line-height:1.8; color:var(--mid); margin-bottom:18px; max-width:720px; }
+  .approach-list { list-style:none; margin:24px 0; }
+  .approach-list li { padding:14px 0 14px 28px; border-bottom:1px solid var(--border); position:relative; color:var(--mid); font-size:15px; line-height:1.6; }
+  .approach-list li::before { content:"—"; position:absolute; left:0; color:var(--green); }
+  .video-embed { position:relative; width:100%; max-width:680px; aspect-ratio:16/9; margin:24px 0; border-radius:8px; overflow:hidden; background:var(--cream); }
+  .video-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  .ig-grid { display:flex; gap:20px; overflow-x:auto; padding:8px 4px 20px; margin:16px 0 8px; scroll-snap-type:x mandatory; }
+  .ig-grid::-webkit-scrollbar { height:8px; }
+  .ig-grid::-webkit-scrollbar-thumb { background:var(--border); border-radius:8px; }
+  .ig-embed-wrap { flex:0 0 auto; scroll-snap-align:start; width:328px; }
+  .scroll-hint { font-size:12px; color:var(--light); margin-bottom:8px; }
+  .press-quote { font-size:16px; font-style:italic; color:var(--navy); line-height:1.7; border-left:3px solid var(--green); padding-left:20px; margin:20px 0; }
+  .outlet-row { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 8px; }
+  .outlet-badge { background:var(--cream); border:1px solid var(--border); border-radius:100px; padding:8px 18px; font-size:13px; font-weight:600; color:var(--navy); }
+  .cta { background:var(--navy); text-align:center; padding:80px 48px; max-width:none; margin:0; }
+  .cta h2 { color:white; }
+  .cta-link { display:inline-block; margin-top:20px; background:var(--green); color:white; padding:14px 28px;
+    border-radius:4px; text-decoration:none; font-size:14px; font-weight:600; }
+  footer { background:var(--navy-deep); padding:24px 48px; text-align:center; }
+  footer p { font-size:13px; color:rgba(255,255,255,0.35); }
+  @media (max-width:768px){ .hero{padding:120px 24px 60px;} section{padding:60px 24px;} .stats-bar{grid-template-columns:1fr;padding:24px;} .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding:16px 0;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Elena Picchi</span>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <a href="index.html#work" class="back-link">← Back to case studies</a>
+  <p class="card-type">B2C · Social Media & Influencer Marketing</p>
+  <h1>Social media management and influencer marketing, end to end</h1>
+  <p class="hero-sub">Across Ruby Cup, Nomysh and Vonder, I've run influencer programmes spanning macro names to micro creators and UGC, and produced original social-first content — street interviews, mini podcasts, and three long-running video series — shooting, editing and directing all of it myself.</p>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Micro-influencer partnerships sourced and closed at Ruby Cup, Oct 2025–Feb 2026</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Original content series conceived, produced and often hosted personally</div></div>
+  <div class="stat"><div class="stat-num">894K+</div><div class="stat-label">Combined reach across macro-influencer placements</div></div>
+</div>
+
+<section>
+  <p class="section-eyebrow">The brief</p>
+  <h2>Every part of the influencer and content mix</h2>
+  <p class="body-text">Influencer marketing done well isn't one thing — it's macro names for reach, micro creators for trust, UGC for authenticity, and original in-house content that doesn't rely on anyone else's calendar. I've built and run all four, plus the creative direction tying them together across three very different brands.</p>
+
+  <p class="section-eyebrow sub">Macro influencer partnerships</p>
+  <p class="body-text">At Vonder, I sourced and secured placements with creators reaching hundreds of thousands of followers, including a shared-asset collaboration and a dedicated YouTube integration — extending reach well beyond what owned channels could achieve alone.</p>
+  <p class="scroll-hint">Scroll to see more →</p>
+  <div class="ig-grid">
+    <div class="ig-embed-wrap">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CgUX1rqpoyV/" data-instgrm-version="14"></blockquote>
+    </div>
+    <div class="ig-embed-wrap">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/ChkXWvfjawF/" data-instgrm-version="14"></blockquote>
+    </div>
+    <div class="ig-embed-wrap">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cfn2suEsElw/" data-instgrm-version="14"></blockquote>
+    </div>
+    <div class="ig-embed-wrap">
+      <div class="video-embed" style="max-width:328px; aspect-ratio:9/16;">
+        <iframe src="https://www.youtube.com/embed/CmMNftIIvwk?start=389" title="Vonder x Simple Little Zen YouTube collaboration" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <p class="body-text" style="font-size:13px; color:var(--light);">Reach: 570K (reel) · 130K (shared asset with Alexa & Maria) · 194K · Simple Little Zen (YouTube)</p>
+
+  <p class="section-eyebrow sub">Micro-influencer programme</p>
+  <p class="body-text">At Ruby Cup, I personally sourced, reached out to and closed roughly 20 micro-influencer collaborations between October 2025 and February 2026 — including shipping product samples — all unpaid, and all driving exponential growth in Instagram engagement over that period.</p>
+  <p class="scroll-hint">Scroll to see more →</p>
+  <div class="ig-grid">
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTxJYNoDCSV/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSpjDwjjZEX/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU83YauAvvE/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU_aG3ECg6H/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVBfPgogt_m/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVGRQPQCFYJ/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVV96I3DQW-/" data-instgrm-version="14"></blockquote></div>
+  </div>
+
+  <p class="section-eyebrow sub">Original content & creative direction</p>
+  <h3>Street interviews</h3>
+  <p class="body-text">Concept, shooting, editing and hiring the on-camera presenter for a street-interview format — including sourcing events aligned with our audience, like the London Marathon, since runners were one of Ruby Cup's core target groups.</p>
+  <p class="scroll-hint">Scroll to see more →</p>
+  <div class="ig-grid">
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXoix3PiAVK/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZPRY6iE1IL/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXoSlMiiBZT/" data-instgrm-version="14"></blockquote></div>
+  </div>
+
+  <h3 style="margin-top:32px;">Mini fake podcast</h3>
+  <p class="body-text">A recurring scripted mini-format tackling trending and relevant topics — from Love Island to AI — written, shot and edited entirely by me.</p>
+  <div class="ig-grid">
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU2yzpKiCEX/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUYPIz2ErKw/" data-instgrm-version="14"></blockquote></div>
+  </div>
+
+  <p class="section-eyebrow sub">Shot & edited engaging content — Vonder</p>
+  <p class="body-text">Original short-form content produced for Vonder's channels, including a piece featuring collaborating influencers directly.</p>
+  <div class="ig-grid">
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CeOrgysjgPr/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CdsiXvZgrWV/" data-instgrm-version="14"></blockquote></div>
+    <div class="ig-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cbmqmk2jQ7w/" data-instgrm-version="14"></blockquote></div>
+  </div>
+
+  <p class="section-eyebrow sub">Podcast & video series — Nomysh</p>
+  <p class="body-text">Three ongoing series conceived and produced with Nomysh's founders, each with a different purpose: creator spotlights, inspiring testimonials, and educational content I hosted personally.</p>
+
+  <h3 style="margin-top:24px;">Creator Diaries</h3>
+  <p class="body-text">Spotlighting content creators from the Nomysh platform, telling their stories in their own words.</p>
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/JnzEpJgImh0" title="Creator Diaries — Nomysh" allowfullscreen></iframe>
+  </div>
+
+  <h3 style="margin-top:32px;">Create with Nomysh</h3>
+  <p class="body-text">Inspiring testimonials from working creators and creatives — including Jayden, a macro influencer with 170K followers, on her experience building a creative career.</p>
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/6EC3eJ4jX80" title="Create with Nomysh — featuring Jayden" allowfullscreen></iframe>
+  </div>
+
+  <h3 style="margin-top:32px;">Nomysh Talks</h3>
+  <p class="body-text">An educational series I personally conceived, scripted and hosted, breaking down practical topics for the creator community.</p>
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/XW52g1YSUF0" title="Nomysh Talks" allowfullscreen></iframe>
+  </div>
+
+  <p class="section-eyebrow sub">UGC sourcing & PR</p>
+  <p class="body-text">Beyond influencer partnerships, I sourced, negotiated and directed UGC creators for Ruby Cup's product photography and other ongoing needs — newsletter imagery, social content — and liaised directly with PR agencies, sending product samples to media outlets that resulted in features across national press.</p>
+  <div class="outlet-row">
+    <span class="outlet-badge">Glamour</span>
+    <span class="outlet-badge">The Telegraph</span>
+    <span class="outlet-badge">Cosmopolitan</span>
+    <span class="outlet-badge">and others</span>
+  </div>
+
+  <p class="section-eyebrow sub">Result</p>
+  <p class="body-text">Together, these programmes grew Ruby Cup's Instagram engagement exponentially through unpaid micro-influencer relationships alone, extended reach by close to a million through macro placements, and gave three brands a recurring content identity that didn't depend on paid media to keep showing up.</p>
+</section>
+
+<section class="cta">
+  <h2>Want to see the full content archive?</h2>
+  <a href="mailto:elena.sophia.picchi@gmail.com" class="cta-link">Get in touch</a>
+</section>
+
+<footer><p>© 2026 Elena Picchi · London, UK</p></footer>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>
