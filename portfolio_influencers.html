@@ -54,10 +54,89 @@
   .cta h2 { color:white; }
   .cta-link { display:inline-block; margin-top:20px; background:var(--green); color:white; padding:14px 28px;
     border-radius:4px; text-decoration:none; font-size:14px; font-weight:600; }
-  footer { background:var(--navy-deep); padding:0px 0px; text-align:center; margin-top:auto}
-  footer p { font-size:13px; color:rgba(255,255,255,0.35); }
-  @media (max-width:768px){ .hero{padding:120px 24px 60px;} section{padding:60px 24px;} .stats-bar{grid-template-columns:1fr;padding:24px;} .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding:16px 0;} }
-</style>
+  footer {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-top: 0;
+      padding: 24px 48px;
+      background: var(--navy-deep);
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 13px;
+      line-height: 1.5;
+       @media (max-width: 768px) {
+      nav {
+        height: 60px;
+        padding: 0 24px;
+      }
+
+      .nav-links a {
+        margin-left: 16px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 120px 24px 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 10vw, 48px);
+      }
+
+      .hero-sub {
+        font-size: 16px;
+      }
+
+      .stats-bar {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      .stat,
+      .stat:first-child {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat:first-child {
+        padding-top: 0;
+      }
+
+      .stat:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      section {
+        padding: 50px 24px;
+      }
+
+      h2 {
+        font-size: 29px;
+      }
+
+      .ig-grid {
+        gap: 16px;
+      }
+
+      .ig-embed-wrap {
+        flex-basis: min(328px, calc(100vw - 56px));
+        width: min(328px, calc(100vw - 56px));
+      }
+
+      .cta {
+        padding: 64px 24px;
+      }
+
+      footer {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
